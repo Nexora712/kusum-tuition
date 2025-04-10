@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Create flower and raindrop animations
+    // Create flower and raindrop animations with reduced count
     createAnimations();
 
     // Smooth scrolling for navigation links
@@ -16,9 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressBar = document.querySelector('.progress-fill');
     const studentCount = document.getElementById('student-count');
     let currentCount = 0;
-    const targetCount = 15; // Example target number of students
-    const duration = 2000; // Animation duration in milliseconds
-    const steps = 60; // Number of steps in the animation
+    const targetCount = 15;
+    const duration = 2000;
+    const steps = 30; // Reduced steps for smoother animation
     const stepDuration = duration / steps;
     const increment = targetCount / steps;
 
@@ -82,31 +82,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Create flower and raindrop animations
+// Create optimized flower and raindrop animations
 function createAnimations() {
     const flowersContainer = document.getElementById('flowers');
     const raindropsContainer = document.getElementById('raindrops');
 
-    // Create more flowers
-    for (let i = 0; i < 30; i++) {
+    // Create fewer flowers with optimized animation
+    for (let i = 0; i < 15; i++) { // Reduced from 30 to 15
         const flower = document.createElement('div');
         flower.className = 'flower';
         flower.style.left = `${Math.random() * 100}%`;
         flower.style.top = `${Math.random() * 100}%`;
-        flower.style.animationDelay = `${Math.random() * 5}s`;
-        flower.style.opacity = `${Math.random() * 0.6}`;
-        flower.style.transform = `scale(${Math.random() * 0.5 + 0.5})`;
+        flower.style.animationDelay = `${Math.random() * 3}s`; // Reduced delay
+        flower.style.opacity = `${Math.random() * 0.4 + 0.2}`; // Reduced opacity range
+        flower.style.transform = `scale(${Math.random() * 0.3 + 0.7})`; // Optimized scale
         flowersContainer.appendChild(flower);
     }
 
-    // Create more raindrops
-    for (let i = 0; i = 50; i++) {
+    // Create fewer raindrops with optimized animation
+    for (let i = 0; i < 25; i++) { // Reduced from 50 to 25
         const raindrop = document.createElement('div');
         raindrop.className = 'raindrop';
         raindrop.style.left = `${Math.random() * 100}%`;
-        raindrop.style.animationDelay = `${Math.random() * 2}s`;
-        raindrop.style.opacity = `${Math.random() * 0.6}`;
-        raindrop.style.height = `${Math.random() * 10 + 5}px`;
+        raindrop.style.animationDelay = `${Math.random() * 1}s`; // Reduced delay
+        raindrop.style.opacity = `${Math.random() * 0.4 + 0.2}`; // Reduced opacity range
+        raindrop.style.height = `${Math.random() * 8 + 4}px`; // Optimized height
         raindropsContainer.appendChild(raindrop);
     }
 }

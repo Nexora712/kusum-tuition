@@ -6,7 +6,7 @@
     --highlight: #e67e22;
 }
 
-/* Flower and raindrop animations */
+/* Optimized animations */
 #flowers, #raindrops {
     position: fixed;
     top: 0;
@@ -15,27 +15,30 @@
     height: 100%;
     pointer-events: none;
     z-index: 1;
+    will-change: transform;
 }
 
 .flower {
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     background: var(--accent);
     border-radius: 50%;
     opacity: 0.6;
-    animation: float 4s infinite;
+    animation: float 3s infinite ease-in-out;
     z-index: 1;
+    will-change: transform;
 }
 
 .raindrop {
     position: absolute;
     width: 2px;
-    height: 10px;
+    height: 8px;
     background: var(--accent);
     opacity: 0.6;
-    animation: fall 2s infinite;
+    animation: fall 1.5s infinite linear;
     z-index: 1;
+    will-change: transform;
 }
 
 @keyframes float {
@@ -53,6 +56,8 @@
 .section {
     position: relative;
     z-index: 2;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .navbar {
